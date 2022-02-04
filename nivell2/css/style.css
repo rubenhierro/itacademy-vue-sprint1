@@ -117,6 +117,10 @@ i {
   margin-right: 5px;
 }
 
+.social-icons i {
+  font-size: x-large;
+}
+
 /* Links */
 a {
   color: gray;
@@ -160,6 +164,10 @@ a:hover {
   main {
     margin-bottom: 0px;
     margin-right: 10px;
+  }
+
+  .navbar {
+    align-items: center;
   }
 }
 
