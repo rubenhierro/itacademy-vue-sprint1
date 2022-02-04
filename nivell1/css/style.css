@@ -1,0 +1,54 @@
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+div {
+  margin: 10px;
+  padding: 10px;
+  border: 0px solid black;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+/* Mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .col-1 {
+    width: 16.6%;
+  }
+  .col-2 {
+    width: 33%;
+  }
+  .col-3 {
+    width: 66%;
+  }
+  .col-4 {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .flex-vertical {
+    flex-direction: column;
+  }
+  .col-3 {
+    width: 95%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
