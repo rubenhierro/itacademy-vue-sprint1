@@ -7,6 +7,13 @@
 .container {
   max-width: 1200px;
   margin: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "head"
+    "section"
+    "foot";
 }
 
 div {
@@ -16,6 +23,7 @@ div {
 }
 
 header {
+  grid-area: head;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,6 +38,13 @@ header {
   text-align: center;
 }
 
+#logo:hover {
+  width: 80px;
+  text-align: center;
+  animation-name: logo-rotate;
+  animation-duration: 300ms;
+}
+
 section {
   background-color: transparent;
   color: black;
@@ -38,6 +53,7 @@ section {
 }
 
 main {
+  grid-area: main;
   background-color: lightgray;
   margin-bottom: 10px;
 }
@@ -47,11 +63,13 @@ main p {
 }
 
 aside {
+  grid-area: aside;
   background-color: lightgray;
   text-align: center;
 }
 
 footer {
+  grid-area: foot;
   background-color: bisque;
   text-align: center;
 }
@@ -63,6 +81,8 @@ footer {
   margin-left: 100px;
   margin-right: 100px;
   margin-bottom: 0%;
+  animation-name: claim-bgcolor;
+  animation-duration: 3000ms;
 }
 
 h1 {
@@ -141,6 +161,32 @@ a:hover {
   flex-grow: 1;
 }
 
+/* Animations */
+
+@keyframes logo-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes claim-bgcolor {
+  0% {
+    background-color: gray;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: coral;
+  }
+  100% {
+    background-color: gray;
+  }
+}
+
 /* Mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -161,7 +207,16 @@ a:hover {
     width: 100%;
   }
 
+  section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "main aside";
+    column-gap: 10px;
+  }
+
   main {
+    grid-area: main;
     margin-bottom: 0px;
     margin-right: 10px;
   }
@@ -178,6 +233,21 @@ a:hover {
   }
   .col-3 {
     width: 100%;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "main"
+      "aside";
+    column-gap: 0px;
+    row-gap: 10px;
+  }
+
+  main {
+    margin-right: 0px;
   }
 }
 
